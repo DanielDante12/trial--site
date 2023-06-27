@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Git Lecture</title>
 </head>
-<body>
-    <form>
-     <div class="don">
-    <h1>Registrattion form</h1>
+<body class="container" id="body">
+    <div class="don">
+    <form method="post">
+     <fieldset>
+        <legend>Registrattion form</legend>
     <label>
-    Surname:<input type="text" name="name" placeholder="Ofwono">
+    First name:<input type="text" name="name" placeholder="Daniel">
     </label>
     <br>
-    <label>First name:<input type="text" name="dom" placeholder="Daniel"></label>
+    <label>Last name:<input type="text" name="dom" placeholder="Ofwono"></label>
     <br>
     <label>
-        Gender:
+        Gender:<br>
+        <div class="r">
         <input type="radio" name="M" value="#">Male
         <input type="radio" name="F" value="">Female
+    </div>
     </label>
     <br>
+    <label>
+    Date Of Birth:<br>
+    <input type="date" name="DOB">
+</label>
+<br>
     <label>
         Nationality:<br>
         <select name="nationality">
@@ -48,6 +57,7 @@
     <br>
     <label>
         Course:<br>
+        <div class="dan">
         <input type="checkbox" name="Course" value="">BIST
         <input type="checkbox" name="Course" value="">BCS
         <input type="checkbox" name="Course" value="">BSE
@@ -58,8 +68,25 @@
         <input type="checkbox" name="Course" value="">BECON
         <input type="checkbox" name="Course" value="">BLIS
         <input type="checkbox" name="Course" value="">BCE
-    </label>
     </div>
+    </label>
+    <br>
+    Submit University testimonial of resuts:<br>
+    <label>
+        <input type="file" name=" University testimonial of resuts" value="">
+    </label>
+    <br>
+    <label>
+    Comment:<br>
+    <textarea>Write short notes about yourself</textarea>
+</label>
+<br>
+<label>
+    <input type="submit" name="submit" value="Submit">
+    <input type="reset" name="reset" value="Reset">
+</label>
+</fieldset>
     </form>
+</div>
 </body>
 </html>
