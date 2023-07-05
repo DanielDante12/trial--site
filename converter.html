@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body{
+            background: #c0c0c0;
+
+        }
+        h1{
+            background: #00cc99;
+            text-align: center;
+            font-size: 38px;
+            padding: 20px len;
+            font-weight: bold;
+            margin-left: 34%;
+            margin-right: 34%;
+            cursor: pointer;
+            font-family: Times New Roman;
+        }
+        marquee{
+            background: #00FFFF;
+            font-size: 20px;
+            padding-top: 6px;
+            margin: -15px;
+            margin-left: 34%;
+            margin-right: 34%;
+            cursor: pointer;
+        }
+        fieldset{
+            width: 70%;
+            margin: auto;
+            border: 1px solid #000;
+            text-align: left;
+            font-size: 20px;
+            font-family: lato, sans-serif; 
+        }
+        input[type=number],[id]{
+            background: #fff;
+            border: 1px solid #000;
+            border-radius: 2px;
+            border-width: 1px;
+            color: #36454b;
+            font-size: 15px;
+            margin: 5px;
+            padding: 12px;
+            display: inline-block;
+        }
+        input[type=button]{
+            width: 85px;
+            height: 45px;
+            font-weight: bold;
+        }
+        input[type=reset]{
+            width: 85px;
+            height: 45px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+      function currencyConverter(valNum) {
+    if (valNum <= 0) {
+        window.alert("Enter Value Greater than 0");
+    } else {
+        document.getElementById("dollar").value = (valNum * 0.00027).toFixed(2);
+        document.getElementById("yuan").value = (valNum * 0.0020).toFixed(2);
+        document.getElementById("won").value = (valNum * 0.35).toFixed(2);
+        document.getElementById("riyal").value = (valNum * 0.0010).toFixed(2);
+        document.getElementById("dinar").value = (valNum * 0.000083).toFixed(2);
+    }
+}
+
+    </script>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+<marquee>Welcome to Online Currency Converter</marquee>
+<form name="converter">
+    <fieldset>
+        <label>Ug Currency(Shillings):</label>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <!-- Input field for the value in Ugandan Shillings -->
+        <input type="number" name="shillings" required>
+        <!-- Button to trigger the conversion -->
+        <input type="button" value="convert" onclick="currencyConverter(converter.shillings.value)"><br><br>
+
+        <!-- Output fields for converted currencies -->
+        <label for="">Dollar(American):</label>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type="number" name="" id="dollar"><br><br>
+
+        <label for="">Yuan(China):</label>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" name="" id="yuan"><br><br>
+
+        <label for="">Won(Korea):</label>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type="number" name="" id="won"><br><br>
+
+        <label for="">Riyal(Saudi Arabia):</label>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="number" name="" id="riyal"><br><br>
+
+        <label for="">Dinar(Kuwait):</label>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type="number" name="" id="dinar"><br><br>
+
+        <!-- Button to reset the form -->
+        <input type="reset" value="Reset Form">
+        <p align="center">You can press the Reset button to reset the form</p>
+    </fieldset>
+</form>
+
+</body>
+</html>
