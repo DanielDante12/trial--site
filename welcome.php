@@ -3,11 +3,11 @@ include 'connect.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $errors=array();
     // validate username
-    if(empty ($_POST['name'])){
-        $errors[]=  "enter your name";
+    if(empty ($_POST['username'])){
+        $errors[]=  "enter your username";
     }
     else {
-        $name=$_POST['name'];
+        $username=$_POST['username'];
     }
     //vaidate email
     if(empty ($_POST['email'])){
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     else {
         $email=$_POST['email'];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[]= "ivalid email format";
+            $errors[]= "invalid email format";
         }
     }
     //validate password
@@ -31,8 +31,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $password = password_hash($password, PASSWORD_DEFAULT);
     //inserting values
     if(empty ($errors)){
-        $stmt = $db -> prepare("insert into student(name,email,password) VALUES (?,?,?)");
-        $stmt ->bind_param("sss", $name,$email,$password);
+        $stmt = $db -> prepare("insert into student(username,email,password) VALUES (?,?,?)");
+        $stmt ->bind_param("sss", $username,$email,$password);
         $stmt -> execute();
         $stmt -> close();
     }else {

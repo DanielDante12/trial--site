@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function currencyConverter(valNum){
+        if(valNum <= 0){
+            window .alert("Enter value greater than 0");
+        }else{
+            document.getElementById("dollar").value = (valNum * 0.00027);
+        }
+    }
+    </script> 
+</head>
+<body>
+    <form action="" name="converter">
+        <label for="">Ugx(Shillings):</label>
+        <input type="number"  name="shillings" required>
+        <input type="button" value="convert" onclick=" return currencyConverter(converter.shillings.value)"><br><br>
+        <label for="">Dollars:</label>
+        <input type="number" name="" id="dollar"><br><br>
+        <input type="reset" value="reset">
+    </form>
+</body>
+</html>

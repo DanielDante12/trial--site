@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="" method="post" name="form1" onsubmit="convert_to_USD();">
+<label for="">Value in Ugx:</label><br>
+<input type="text" name="ugx_value" id=""><br><br>
+<input type="submit" value="convert"><br><br>
+<div id="converted"></div>
+    </form>
+</body>
+</html>
+<script>
+    function convert_to_USD(){
+        const rate =3700;
+        if (document.form1.ugx_value.value !="") {
+            var ugxValue = document.form1.ugx_value.value;
+            // var result = document.getElementById("converted");
+
+            var numUgxValue = parseFloat(ugxValue);
+            if(!isNAN(numUgxValue)){
+                numUgxValue = numUgxValue / rate;
+                document.getElementById("converted").innerHTML=numUgxValue;
+            }
+        }
+    }
+</script>

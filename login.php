@@ -4,12 +4,12 @@ include_once 'connect.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['name'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     // Retrieve data
-    $stmt = $db->prepare("SELECT * FROM student WHERE  'name' = ?");
-    $stmt->bind_param("s", $name);
+    $stmt = $db->prepare("SELECT * FROM student WHERE  username = ?");
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -18,14 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verify password
         if (password_verify($password, $user['password'])) {
             // Log the user in
-            $_SESSION['name'] = $user['name'];
+            $_SESSION['username'] = $user['username'];
             header('location:home.php');
             exit; // Ensure the script stops execution after redirection
         } else {
             echo "Invalid password";
         }
     } else {
-        echo "Invalid name";
+        echo "Invalid username";
     }
 
     $stmt->close();
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <form method="POST">
-        <input type="text" name="name" placeholder="enter name"><br>
+        <input type="text" name="username" placeholder="enter username"><br>
         <input type="password" name="password" placeholder="enter pass"><br>
         <input type="submit" name="submit">
     </form>

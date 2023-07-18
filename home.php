@@ -19,7 +19,7 @@ if(!isset($_SESSION['username'])){
     <title>Home</title>
 </head>
 <body>
-    <h1>welcome <?php echo $_SESSION['name']; ?></h1>
+    <h1>welcome <?php echo $_SESSION['username']; ?></h1>
     <a href="logout.php">Logout</a>
 </body>
 </html>
